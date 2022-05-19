@@ -1,0 +1,70 @@
+<h1 mat-dialog-title>Add Entry</h1>
+<div mat-dialog-content>
+    <form [formGroup]="userForm">
+        <mat-form-field appearance="outline" color="accent">
+            <mat-label>Full Name</mat-label>
+            <input formControlName="fullName" matInput placeholder="Full Name">
+            <mat-hint>
+                <!-- <span class="text-danger" *ngIf=" userForm.hasError('required','fullName')">Full name is <strong>requires</strong></span>
+                <span class="text-danger" *ngIf="userForm.hasError('min','fullName')">Your name is too <strong>Short</strong></span> -->
+                <span *ngIf="userForm.controls['fullName'].dirty && userForm.hasError('required','fullName')">*Full name is required</span>
+            </mat-hint>
+            
+            <!-- <mat-error *ngIf="userForm.hasError('minLength') && !userForm.hasError('required')">
+                Your name is too <strong>Short</strong>
+            </mat-error> -->
+        </mat-form-field>
+        <mat-form-field appearance="outline" color="warn">
+            <mat-label>Roles</mat-label>
+            <mat-select formControlName="roles">
+                <mat-option value="admin">Admin</mat-option>
+                <mat-option value="processor">Processor</mat-option>
+            </mat-select>
+            <mat-hint>
+                <span *ngIf="userForm.controls['roles'].dirty && userForm.hasError('required','roles')">*Full name is required</span>
+                <!-- <span *ngIf=" userForm.hasError('required','roles')" >
+                    Role is <strong>required</strong>
+                </span> -->
+            </mat-hint>
+        </mat-form-field>
+        
+        <mat-form-field appearance="outline" color="warn">
+            <mat-label>Choose a DOB</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="dob">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <mat-hint>
+                <span *ngIf="userForm.controls['dob'].dirty && userForm.hasError('required','dob')">*Full name is required</span>
+            </mat-hint>
+        </mat-form-field>
+        <label id="gender-radio-group-label">Gender</label>
+        <mat-radio-group aria-labelledby="gender-radio-group-label" class="example-radio-group" formControlName="gender" >
+            <mat-radio-button class="example-radio-button" *ngFor="let gender of genderList" [value]="gender">
+                {{gender}}
+            </mat-radio-button>
+            <mat-hint>
+                <span *ngIf="userForm.controls['gender'].dirty && userForm.hasError('required','gender')">*Full name is required</span>
+            </mat-hint>
+        </mat-radio-group>
+        <mat-form-field appearance="outline" color="warn">
+            <mat-label>Age</mat-label>
+            <input matInput type="number" formControlName="age" placeholder="Age">
+            <mat-hint>
+                <span *ngIf="userForm.controls['age'].dirty && userForm.hasError('required','age')">*Full name is required</span>
+            </mat-hint>
+        </mat-form-field>
+        <label id="status-radio-group-label">Status</label>
+        <mat-radio-group aria-labelledby="status-radio-group-label" class="example-radio-group" formControlName="status" >
+            <mat-radio-button class="example-radio-button" *ngFor="let status of statusList" [value]="status">
+                {{status}}
+            </mat-radio-button>
+            <mat-hint>
+                <span *ngIf="userForm.controls['status'].dirty && userForm.hasError('required','status')">*Full name is required</span>
+            </mat-hint>
+        </mat-radio-group>
+    </form>
+</div>
+<div mat-dialog-actions [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close="">Close</button>
+    <button mat-raised-button color="accent" (click)="submitForm()">{{actionBtn}}</button>
+</div>

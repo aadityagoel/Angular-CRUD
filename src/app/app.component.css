@@ -1,0 +1,29 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+table {
+    width: 100%;
+}
+
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+::ng-deep .mat-form-field-underline .mat-form-field-ripple{
+    background-color:#7b1fa2;
+}
+
+mat-label{
+    color: #7b1fa2;
+}
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-underline::before{
+    background-color: #7b1fa2;
+}
+  

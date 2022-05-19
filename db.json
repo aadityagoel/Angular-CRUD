@@ -1,0 +1,68 @@
+{
+  "userList": [
+    {
+      "fullName": "Aaditya",
+      "roles": "admin",
+      "dob": "2022-02-28T18:30:00.000Z",
+      "gender": "Male",
+      "age": 18,
+      "status": "Active",
+      "id": 1
+    },
+    {
+      "fullName": "Vishal",
+      "roles": "processor",
+      "dob": "2022-01-11T18:30:00.000Z",
+      "gender": "Male",
+      "age": 22,
+      "status": "Active",
+      "id": 2
+    },
+    {
+      "fullName": "sparsh",
+      "roles": "admin",
+      "dob": "2022-03-07T18:30:00.000Z",
+      "gender": "Male",
+      "age": 35,
+      "status": "Active",
+      "id": 4
+    },
+    {
+      "fullName": "rohit",
+      "roles": "processor",
+      "dob": "2022-02-28T18:30:00.000Z",
+      "gender": "Male",
+      "age": 64,
+      "status": "Inactive",
+      "id": 5
+    },
+    {
+      "fullName": "ramesh",
+      "roles": "processor",
+      "dob": "2022-03-21T18:30:00.000Z",
+      "gender": "Male",
+      "age": 95,
+      "status": "Active",
+      "id": 6
+    },
+    {
+      "fullName": "shubham",
+      "roles": "processor",
+      "dob": "2022-02-28T18:30:00.000Z",
+      "gender": "Male",
+      "age": 24,
+      "status": "Active",
+      "id": 7
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
